@@ -1,18 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+/* eslint-disable*/
 
-const App = () => (
-  <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>
-        Edit <code>src/App.tsx</code> and save to reload.hello world
-      </p>
-      <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-        Learn React
-      </a>
-    </header>
-  </div>
-);
+import { RecoilRoot } from 'recoil';
+import { UserProviders } from './components/providers/UserProviders';
+import { Router } from './router/Router';
+import './styles.css';
 
-export default App;
+export const App = () => {
+  return (
+    <RecoilRoot>
+      <UserProviders>
+        <Router></Router>
+      </UserProviders>
+    </RecoilRoot>
+  );
+};
